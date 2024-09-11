@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradebook</title>
+</head>
+<body>
+
+<script>
+const scores = [92, 88, 12, 77, 57, 100, 67, 38, 97, 89];
+classLen = scores.length;
+
+function getAvg(scores) {
+  let classTot = 0;
+  for(let i = 0; i < classLen; i++) { 
+  classTot += scores[i];
+ }
+  const classAvg = classTot / classLen;
+  return classAvg;
+}
+const avg = getAvg(scores);
+console.log(avg);
+</script>
+    
+</body>
+</html>
