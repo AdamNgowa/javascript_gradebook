@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gradebook</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GradeBook</title>
 </head>
 <body>
+  <script>
+  function getAverage(scores) {
+  let sum = 0;
 
-<script>
-const scores = [92, 88, 12, 77, 57, 100, 67, 38, 97, 89];
-classLen = scores.length;
+  for (const score of scores) {
+    sum += score;
+  }
 
-function getAvg(scores) {
-  let classTot = 0;
-  for(let i = 0; i < classLen; i++) { 
-  classTot += scores[i];
- }
-  const classAvg = classTot / classLen;
-  return classAvg;
+  return sum / scores.length;
 }
-const avg = getAvg(scores);
-console.log(avg);
-</script>
-    
+
+function getGrade(score) {
+  if (score === 100) {
+    return "A++";
+  } else if (score >= 90) {
+    return "A";
+  } else if (score >= 80) {
+    return "B";
+  } else if (score >= 70) {
+    return "C";
+  } else if (score >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+
+function hasPassingGrade(score) {
+  return getGrade(score) !== "F";
+}
+
+function studentMsg(totalScores, studentScore) {
+
+}
+function studentMsg(totalScores, studentScore) {
+  let passFail;
+  if(hasPassingGrade(studentScore)) {
+    passail= "You passed the course.";
+  } else {
+    passFail = "You failed the course.";
+  }
+  return "Class average:"+getAverage(totalScores)+"Your Grade:"+getGrade(studentScore)+passFail;
+
+}
+console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
+
+
+  </script>
 </body>
 </html>
